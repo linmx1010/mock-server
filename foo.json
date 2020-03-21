@@ -1,0 +1,76 @@
+[
+
+  {
+        "request": {
+            "method": "get",
+            "uri": "/book_list"
+        },
+        "response": {
+            "json": {
+                "books": [
+                    "Python基础编程",
+                    "wxPython实战",
+                    "Java核心编程",
+                    "Java编程思想"
+                ]
+            }
+        }
+    },
+	{
+        "request": {
+            "uri" : "/event"
+        },
+        "response": {
+            "text": "event"
+        },
+        "on": {
+            "complete": {
+            "async" : "true",
+            "latency" : 5000,
+                "post" : {
+                    "url" : "http://www.baidu.com",
+                    "content": "content"
+                }
+            }
+        }
+    },
+	{
+	    "request" :{
+            "method" : "post",
+		    "headers" : {
+                "content-type" : "application/json"
+		        },
+            "uri": "/getUser",
+            "forms" :{
+		        "name" : "jack"
+                }
+        },
+        "response" : {
+	  	    "headers" :{
+                "content-type" : "application/json"
+            },
+	        "status" : 200,
+	         "json": {
+                "books": [
+                    "Python基础编程",
+                    "wxPython实战",
+                    "Java核心编程",
+                    "Java编程思想",
+					"${req.queries['name']"
+                ]
+            }
+            
+               
+            },
+        "on": {
+            "complete": {
+            "async" : "true",
+            "latency" : 5000,
+                "post" : {
+                    "url" : "http://www.baidu.com",
+                    "content": "${req.queries['name']}"
+                }
+            }
+        }
+    }
+]
