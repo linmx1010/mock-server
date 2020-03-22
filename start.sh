@@ -1,1 +1,1 @@
-nohup java -jar ./moco-runner-0.12.0-standalone.jar start -p 56789 -c foo.json >./logs/demo.log 2>&1 &
+nohup java -jar ./moco-runner-0.12.0-standalone.jar start -p 56789 -c foo.json >./test.log 2>&1 &
