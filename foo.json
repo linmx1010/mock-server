@@ -16,7 +16,7 @@
   {
         "request": {
             "method": "get",
-            "uri": "/book_list"
+            "uri": "/u/book_list"
         },
         "response": {
             "json": {
