@@ -1,8 +1,8 @@
 [
  {
         "request": {
-            "method": "get",
-            "uri": "/status"
+            "method": "post",
+            "uri": "/api/v1/order/info/status"
         },
         "response": {
             "json": {
