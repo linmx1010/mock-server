@@ -2,7 +2,7 @@
  {
         "request": {
             "method": "get",
-            "uri": "/api/v1/order/info/status"
+            "uri": "/status"
         },
         "response": {
             "json": {
@@ -16,7 +16,7 @@
   {
         "request": {
             "method": "get",
-            "uri": "/u/book_list"
+            "uri": "/book_list"
         },
         "response": {
             "json": {
