@@ -15,9 +15,79 @@
                       "paymentMode":"UPI",
                       "orderCurrency": "INR",
                       "status": "OK"
-}
+          }
         }
  },
+ 
+ {
+       "request": {
+           "uri": "/payout/v1/addBeneficiary"
+       },
+       "response": {
+           "json": {
+		       "status":"ERROR",
+			   "subCode":"409",
+			   "message":"Beneficiary Id already exists"
+			   }
+       }
+    },
+	{
+       "request": {
+           "uri": "/payout/v1/requestTransfer"
+       },
+       "response": {
+           "json": {
+		      "status":"SUCCESS", 
+			  "subCode":"200", 
+			  "message":"Transfer completed successfully", 
+			  "data": {"referenceId":"${json.referenceId}","utr":"P16111765023806","acknowledged": 1}
+			   }
+       }
+    },
+	{
+       "request": {
+           "uri": "/payout/v1/getTransferStatus",
+		   "method":"get"
+       },
+       "response": {
+           "json": {
+		   
+                "transferId":"${queries.transferId}",
+		        "status": "SUCCESS", 
+			    "subCode": "200", 
+			    "message": "Details of transfer with transferId 159381033b123", 
+			    "data": {
+			         "transfer": { 
+			  	        "referenceId": 17073, 
+			  	        "bankAccount": "026291800001191", 
+			  	        "beneId": "ABCD_123", 
+			  	        "amount": "20.00", 
+			  	        "status": "SUCCESS", 
+			  	        "utr": "1387420170430008800069857", 
+			  	        "addedOn": "2017­-01­-07 20:09:59", 
+			  	        "processedOn": "2017­-01­-07 20:10:05", 
+			  	        "acknowledged": 1 
+			  	    }
+			  	}
+			}
+        }
+    },
+	{
+       "request": {
+           "uri": "/payout/v1/getBalance"
+       },
+       "response": {
+           "json": {
+		       "status":"SUCCESS", 
+			   "subCode":"200", 
+			   "message":"Ledger balance for the account", 
+			   "data": {"balance":"214735.50", "availableBalance":"173980.50"}
+			   }
+       }
+    }
+ 
+ 
+ 
  
   {
         "request": {
